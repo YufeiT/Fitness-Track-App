@@ -1,10 +1,3 @@
-//
-//  GraphView.swift
-//  JustWalking (iOS)
-//
-//  Created by Mohammad Azam on 7/19/20.
-//
-
 import SwiftUI
 
 struct GraphView: View {
