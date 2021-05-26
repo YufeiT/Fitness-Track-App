@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GraphView: View {
+struct StepGraphView: View {
     
     
     static let dateFormatter: DateFormatter = {
@@ -30,7 +30,7 @@ struct GraphView: View {
                             .font(.caption)
                             .foregroundColor(Color.white)
                         Rectangle()
-                            .fill(step.count > 10000 ? Color.green :Color.red)
+                            .fill(step.count > 10000 ? Color.green :Color.white)
                             .frame(width: 20, height: CGFloat(yValue))
                         Text("\(step.date,formatter: Self.dateFormatter)")
                             .font(.caption)
@@ -40,20 +40,20 @@ struct GraphView: View {
                 
             }
             
-            Text("Total Steps: \(totalSteps)").padding(.top, 100)
+            Text("Total Steps: \(totalSteps)").padding(.top, 15)
                 .foregroundColor(Color.white)
                 .opacity(0.5)
             
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(#colorLiteral(red: 0.2471546233, green: 0.4435939193, blue: 0.8302586079, alpha: 1)))
+        }.frame(maxWidth: .infinity, minHeight: 500, maxHeight: .infinity)
+        .background(Color(#colorLiteral(red: 0.6353674531, green: 0.7178291678, blue: 0.7163413167, alpha: 1)))
         .cornerRadius(10)
         .padding(10)
     }
 }
 
-struct GraphView_Previews: PreviewProvider {
+struct StepGraphView_Previews: PreviewProvider {
     static var previews: some View {
-        
+
         let steps = [
                    Step(count: 3452, date: Date()),
                    Step(count: 123, date: Date()),
@@ -61,7 +61,7 @@ struct GraphView_Previews: PreviewProvider {
                    Step(count: 5223, date: Date()),
                    Step(count: 12023, date: Date())
                ]
-        
-        GraphView(steps: steps)
+
+        StepGraphView(steps: steps)
     }
 }

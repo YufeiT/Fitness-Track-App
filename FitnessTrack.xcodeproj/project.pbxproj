@@ -13,8 +13,10 @@
 		5AB21817265ED2D300B45E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB21816265ED2D300B45E45 /* Preview Assets.xcassets */; };
 		5AB2181F265ED2F300B45E45 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2181E265ED2F300B45E45 /* HealthStore.swift */; };
 		5AB21822265ED35900B45E45 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21821265ED35900B45E45 /* Step.swift */; };
-		5AB21825265ED36400B45E45 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21824265ED36400B45E45 /* GraphView.swift */; };
+		5AB21825265ED36400B45E45 /* StepGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21824265ED36400B45E45 /* StepGraphView.swift */; };
 		5AB21829265ED37E00B45E45 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB21828265ED37E00B45E45 /* HealthKit.framework */; };
+		5AB2182B265EDD7D00B45E45 /* WorkoutGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */; };
+		5ADD292F265EF06A00B27195 /* ActiveEnergyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,9 +28,11 @@
 		5AB21818265ED2D300B45E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB2181E265ED2F300B45E45 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		5AB21821265ED35900B45E45 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
-		5AB21824265ED36400B45E45 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		5AB21824265ED36400B45E45 /* StepGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepGraphView.swift; sourceTree = "<group>"; };
 		5AB21826265ED37E00B45E45 /* FitnessTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessTrack.entitlements; sourceTree = "<group>"; };
 		5AB21828265ED37E00B45E45 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutGraphView.swift; sourceTree = "<group>"; };
+		5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEnergyGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 		5AB21823265ED36400B45E45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5AB21824265ED36400B45E45 /* GraphView.swift */,
+				5AB21824265ED36400B45E45 /* StepGraphView.swift */,
+				5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */,
+				5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AB21825265ED36400B45E45 /* GraphView.swift in Sources */,
+				5AB21825265ED36400B45E45 /* StepGraphView.swift in Sources */,
 				5AB21812265ED2D300B45E45 /* ContentView.swift in Sources */,
+				5ADD292F265EF06A00B27195 /* ActiveEnergyGraphView.swift in Sources */,
 				5AB21822265ED35900B45E45 /* Step.swift in Sources */,
+				5AB2182B265EDD7D00B45E45 /* WorkoutGraphView.swift in Sources */,
 				5AB2181F265ED2F300B45E45 /* HealthStore.swift in Sources */,
 				5AB21810265ED2D300B45E45 /* FitnessTrackApp.swift in Sources */,
 			);
