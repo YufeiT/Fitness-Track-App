@@ -12,6 +12,9 @@
 		5AB21814265ED2D300B45E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB21813265ED2D300B45E45 /* Assets.xcassets */; };
 		5AB21817265ED2D300B45E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB21816265ED2D300B45E45 /* Preview Assets.xcassets */; };
 		5AB2181F265ED2F300B45E45 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2181E265ED2F300B45E45 /* HealthStore.swift */; };
+		5AB21822265ED35900B45E45 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21821265ED35900B45E45 /* Step.swift */; };
+		5AB21825265ED36400B45E45 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21824265ED36400B45E45 /* GraphView.swift */; };
+		5AB21829265ED37E00B45E45 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB21828265ED37E00B45E45 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,10 @@
 		5AB21816265ED2D300B45E45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AB21818265ED2D300B45E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AB2181E265ED2F300B45E45 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		5AB21821265ED35900B45E45 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		5AB21824265ED36400B45E45 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		5AB21826265ED37E00B45E45 /* FitnessTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitnessTrack.entitlements; sourceTree = "<group>"; };
+		5AB21828265ED37E00B45E45 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB21829265ED37E00B45E45 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +48,7 @@
 			children = (
 				5AB2180E265ED2D300B45E45 /* FitnessTrack */,
 				5AB2180D265ED2D300B45E45 /* Products */,
+				5AB21827265ED37E00B45E45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,9 +63,11 @@
 		5AB2180E265ED2D300B45E45 /* FitnessTrack */ = {
 			isa = PBXGroup;
 			children = (
+				5AB21826265ED37E00B45E45 /* FitnessTrack.entitlements */,
 				5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */,
 				5AB21811265ED2D300B45E45 /* ContentView.swift */,
 				5AB2181E265ED2F300B45E45 /* HealthStore.swift */,
+				5AB21820265ED35900B45E45 /* Models */,
 				5AB21813265ED2D300B45E45 /* Assets.xcassets */,
 				5AB21818265ED2D300B45E45 /* Info.plist */,
 				5AB21815265ED2D300B45E45 /* Preview Content */,
@@ -70,6 +81,31 @@
 				5AB21816265ED2D300B45E45 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5AB21820265ED35900B45E45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5AB21823265ED36400B45E45 /* Views */,
+				5AB21821265ED35900B45E45 /* Step.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5AB21823265ED36400B45E45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AB21824265ED36400B45E45 /* GraphView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5AB21827265ED37E00B45E45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AB21828265ED37E00B45E45 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB21825265ED36400B45E45 /* GraphView.swift in Sources */,
 				5AB21812265ED2D300B45E45 /* ContentView.swift in Sources */,
+				5AB21822265ED35900B45E45 /* Step.swift in Sources */,
 				5AB2181F265ED2F300B45E45 /* HealthStore.swift in Sources */,
 				5AB21810265ED2D300B45E45 /* FitnessTrackApp.swift in Sources */,
 			);
@@ -271,6 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessTrack/FitnessTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessTrack/Preview Content\"";
 				DEVELOPMENT_TEAM = Q8ABXL6UA9;
@@ -293,6 +332,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FitnessTrack/FitnessTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FitnessTrack/Preview Content\"";
 				DEVELOPMENT_TEAM = Q8ABXL6UA9;
