@@ -17,6 +17,8 @@
 		5AB21829265ED37E00B45E45 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB21828265ED37E00B45E45 /* HealthKit.framework */; };
 		5AB2182B265EDD7D00B45E45 /* WorkoutGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */; };
 		5ADD292F265EF06A00B27195 /* ActiveEnergyGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */; };
+		5ADD29352665953100B27195 /* SetGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD29342665953100B27195 /* SetGoal.swift */; };
+		5ADD293726659E8200B27195 /* ChangeGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADD293626659E8200B27195 /* ChangeGoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		5AB21828265ED37E00B45E45 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutGraphView.swift; sourceTree = "<group>"; };
 		5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveEnergyGraphView.swift; sourceTree = "<group>"; };
+		5ADD29342665953100B27195 /* SetGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoal.swift; sourceTree = "<group>"; };
+		5ADD293626659E8200B27195 /* ChangeGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				5AB21826265ED37E00B45E45 /* FitnessTrack.entitlements */,
 				5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */,
 				5AB21811265ED2D300B45E45 /* ContentView.swift */,
+				5ADD293626659E8200B27195 /* ChangeGoalView.swift */,
+				5ADD29342665953100B27195 /* SetGoal.swift */,
 				5AB2181E265ED2F300B45E45 /* HealthStore.swift */,
 				5AB21820265ED35900B45E45 /* Models */,
 				5AB21813265ED2D300B45E45 /* Assets.xcassets */,
@@ -189,6 +195,8 @@
 				5AB21822265ED35900B45E45 /* Step.swift in Sources */,
 				5AB2182B265EDD7D00B45E45 /* WorkoutGraphView.swift in Sources */,
 				5AB2181F265ED2F300B45E45 /* HealthStore.swift in Sources */,
+				5ADD29352665953100B27195 /* SetGoal.swift in Sources */,
+				5ADD293726659E8200B27195 /* ChangeGoalView.swift in Sources */,
 				5AB21810265ED2D300B45E45 /* FitnessTrackApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

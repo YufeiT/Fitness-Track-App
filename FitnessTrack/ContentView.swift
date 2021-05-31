@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var steps: [Step] = [Step]()
     @State private var workouts: [Workout] = [Workout]()
     @State private var activeenergies: [ActiveEnergy] = [ActiveEnergy]()
+    @State private var sumDuration = 0.0
     
     init() {
         healthStore = HealthStore()
@@ -31,19 +32,21 @@ struct ContentView: View {
         
     }
     
-    private func updateWorkoutUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
+    private func updateWorkoutUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) -> Double  {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
         
+        
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             
             let duration = statistics.sumQuantity()?.doubleValue(for: .minute())
+            sumDuration = duration ?? 0.0
             
             let workout = Workout(duration: Int(duration ?? 0), date: statistics.startDate)
             workouts.append(workout)
         }
-        
+        return sumDuration
     }
     
     private func updateEnergyUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
@@ -60,32 +63,11 @@ struct ContentView: View {
         }
         
     }
-
     
-//    var body: some View {
-//
-//        NavigationView {
-//
-//        StepGraphView(steps: steps)
-//        .navigationTitle("Fitness Summary")
-//        }
-//        .onAppear {
-//            if let healthStore = healthStore {
-//                healthStore.requestAuthorization { success in
-//                    if success {
-//                        healthStore.calculateSteps { statisticsCollection in
-//                            if let statisticsCollection = statisticsCollection {
-//                                // update the UI
-//                                updateUIFromStatistics(statisticsCollection)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//        //WorkoutGraphView(workout: workouts)
-//    }
+    @State private var isPresent: Bool = false
+    @State private var text: String = ""
+    
+
     var body: some View {
         NavigationView{
             Section {
@@ -142,6 +124,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Health Data")
+            .navigationBarItems(trailing: NavigationLink(destination: ChangeGoalView(), label: {Text("Modify Goal")}))
         }
     }
 }
