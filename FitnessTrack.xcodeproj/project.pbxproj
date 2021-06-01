@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A7F7D892666B34100442998 /* Motivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7F7D882666B34100442998 /* Motivation.swift */; };
 		5AB21810265ED2D300B45E45 /* FitnessTrackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */; };
 		5AB21812265ED2D300B45E45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB21811265ED2D300B45E45 /* ContentView.swift */; };
 		5AB21814265ED2D300B45E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB21813265ED2D300B45E45 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A7F7D882666B34100442998 /* Motivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motivation.swift; sourceTree = "<group>"; };
 		5AB2180C265ED2D300B45E45 /* FitnessTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessTrackApp.swift; sourceTree = "<group>"; };
 		5AB21811265ED2D300B45E45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5AB21826265ED37E00B45E45 /* FitnessTrack.entitlements */,
 				5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */,
 				5AB21811265ED2D300B45E45 /* ContentView.swift */,
+				5A7F7D882666B34100442998 /* Motivation.swift */,
 				5ABE5FF02665FF80009528F4 /* CurrentGoalView.swift */,
 				5ADD293626659E8200B27195 /* ChangeGoalView.swift */,
 				5AB2181E265ED2F300B45E45 /* HealthStore.swift */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ABE5FF12665FF80009528F4 /* CurrentGoalView.swift in Sources */,
+				5A7F7D892666B34100442998 /* Motivation.swift in Sources */,
 				5AB21825265ED36400B45E45 /* StepGraphView.swift in Sources */,
 				5AB21812265ED2D300B45E45 /* ContentView.swift in Sources */,
 				5ADD292F265EF06A00B27195 /* ActiveEnergyGraphView.swift in Sources */,

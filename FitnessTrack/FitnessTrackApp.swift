@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct FitnessTrackApp: App {
+    @StateObject var goals = Goals()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(goals)
         }
     }
 }

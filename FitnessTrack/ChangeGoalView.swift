@@ -15,17 +15,14 @@ struct ChangeGoalView: View {
     @State private var showActionSheet = false
     var previewOptions = ["Always", "When Unlocked"]
     @State private var showAlert = false
+    @EnvironmentObject var goals: Goals
     
     
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
-    public func get_goal() -> Double{
-        let temp = Double(duration)
-        var goal = Goals(goal: temp ?? 0.0)
-        print("settings.goal: \(goal)")
-        print("temp: \(temp ?? 0.0)")
-        return temp ?? 0.0
+    public func get_goal(){
+        goals.goal = duration
     }
 
     var body: some View {

@@ -26,9 +26,6 @@ struct HearRate: Identifiable {
 }
 
 class Goals: ObservableObject{
-    @Published var goal: Double
-    
-    init(goal: Double) {
-            self.goal = goal
-    }
+    @Published var goal = ""
+    @Published var currentWorkout = ""
 }

@@ -13,6 +13,7 @@ class HealthStore {
     var query: HKStatisticsCollectionQuery?
     var queryWorkout: HKStatisticsCollectionQuery?
     var queryEneygy: HKStatisticsCollectionQuery?
+    var queryHR: HKSampleQuery?
     
     init() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -90,24 +91,30 @@ class HealthStore {
         }
     }
     
-    func latestHeartRate(completion: @escaping (HKStatisticsCollection?) -> Void) {
+    func latestHeartRate(completion: @escaping (HKSampleQuery?) -> Void) {
         let currentRate = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())
 
-        let anchorDate = Date.mondayAt12AM()
-
-        let daily = DateComponents(day: 1)
-
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
-
-        queryEneygy = HKStatisticsCollectionQuery(quantityType: currentRate, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: anchorDate, intervalComponents: daily)
         
-        queryEneygy!.initialResultsHandler = { queryEneygy, statisticsCollection, error in
-            completion(statisticsCollection)
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+
+        queryHR = HKSampleQuery(sampleType: currentRate, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortDescriptor])
+        {
+            (sample, result, error) in
+            guard error == nil else{
+                return
+            }
+        let data = result![0] as! HKQuantitySample
+            let unit = HKUnit(from: "count/min")
+            let latestHR = data.quantity.doubleValue(for: unit)
+            print(latestHR)
+            
         }
 
-        if let healthStore = healthStore, let queryEneygy = self.queryEneygy {
-            healthStore.execute(queryEneygy)
+        if let healthStore = healthStore, let queryHR = self.queryHR {
+            healthStore.execute(queryHR)
         }
     }
     

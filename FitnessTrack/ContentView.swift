@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var steps: [Step] = [Step]()
     @State private var workouts: [Workout] = [Workout]()
     @State private var activeenergies: [ActiveEnergy] = [ActiveEnergy]()
+    @State private var heartrates: [HearRate] = [HearRate]()
     @State private var sumDuration: [Double] = []
     
     
@@ -68,22 +69,31 @@ struct ContentView: View {
         
     }
     
-//    private func updateLatestHeartRate(_ statisticsCollection: HKStatisticsCollection) {
+//    private func updateLatestHeartRate(_ statisticsSample: HKSampleQuery) {
 //        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
 //        let endDate = Date()
+//        
+//        statisticsSample.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
+//
+//            let calorie = statistics.sumQuantity()?.doubleValue(for: .kilocalorie())
+//
+//            let activeenergy = ActiveEnergy(calorie: Int(calorie ?? 0), date: statistics.startDate)
+//            activeenergies.append(activeenergy)
+//        }
+//
+//
 //    }
     
     
     
-    @State private var isPresent: Bool = false
-    @State private var text: String = ""
     @State private var totalWorkout: Double = 0.0
     @State private var goal: Int = 180
-    @EnvironmentObject var settings: Goals
+    @EnvironmentObject var goals: Goals
     
     
     private func calculateTotalWorkout() -> Double {
         totalWorkout = sumDuration.reduce(0, +)
+        goals.currentWorkout = String(totalWorkout)
         print(totalWorkout)
         return totalWorkout
     }
@@ -92,6 +102,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             Section {
+                Motivation()
                 ScrollView{
                     StepGraphView(steps: steps)
                         .onAppear {
@@ -152,8 +163,7 @@ struct ContentView: View {
             
         }
         Section {
-            Text("Current Weekly Goal: \(goal) minutes")
-            //CurrentGoalView()
+            Text("Current Weekly Goal: \(goals.goal) minutes")
             
         }
     }
@@ -164,3 +174,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
