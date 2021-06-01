@@ -14,6 +14,19 @@ struct ChangeGoalView: View {
     @State private var previewIndex = 0
     @State private var showActionSheet = false
     var previewOptions = ["Always", "When Unlocked"]
+    @State private var showAlert = false
+    
+    
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    public func get_goal() -> Double{
+        let temp = Double(duration)
+        var goal = Goals(goal: temp ?? 0.0)
+        print("settings.goal: \(goal)")
+        print("temp: \(temp ?? 0.0)")
+        return temp ?? 0.0
+    }
 
     var body: some View {
         Form {
@@ -23,6 +36,7 @@ struct ChangeGoalView: View {
                     Text("Private Account")
                 }
             }
+            
             
             Section(header: Text("NOTIFICATIONS")) {
                 Toggle(isOn: $notificationsEnabled) {
@@ -40,14 +54,16 @@ struct ChangeGoalView: View {
                     }
                     .actionSheet(isPresented: $showActionSheet) {
                         ActionSheet(title: Text("Save"),
-                                    message: Text("Save the new weekly goal?"),
                                     buttons: [
-                                        .cancel(),
                                         .destructive(
-                                            Text("Ok")
+                                            Text("Ok"),
+                                            action: {self.presentationMode.wrappedValue.dismiss()
+                                                self.get_goal()
+                                            }
                                         ),
                                         .default(
-                                            Text("Cancel")
+                                            Text("Cancel"),
+                                            action: {self.presentationMode.wrappedValue.dismiss()}
                                         )
                                     ]
                         )

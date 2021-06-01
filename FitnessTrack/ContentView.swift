@@ -8,7 +8,8 @@ struct ContentView: View {
     @State private var steps: [Step] = [Step]()
     @State private var workouts: [Workout] = [Workout]()
     @State private var activeenergies: [ActiveEnergy] = [ActiveEnergy]()
-    @State private var sumDuration = 0.0
+    @State private var sumDuration: [Double] = []
+    
     
     init() {
         healthStore = HealthStore()
@@ -21,6 +22,7 @@ struct ContentView: View {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
+        steps = []
         
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             
@@ -32,27 +34,29 @@ struct ContentView: View {
         
     }
     
-    private func updateWorkoutUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) -> Double  {
+    private func updateWorkoutUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
+        workouts = []
+        sumDuration = []
         
         
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             
             let duration = statistics.sumQuantity()?.doubleValue(for: .minute())
-            sumDuration = duration ?? 0.0
+            sumDuration.append(duration ?? 0.0)
             
             let workout = Workout(duration: Int(duration ?? 0), date: statistics.startDate)
             workouts.append(workout)
         }
-        return sumDuration
     }
     
     private func updateEnergyUIFromStatistics(_ statisticsCollection: HKStatisticsCollection) {
         
         let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
         let endDate = Date()
+        activeenergies = []
         
         statisticsCollection.enumerateStatistics(from: startDate, to: endDate) { (statistics, stop) in
             
@@ -64,8 +68,25 @@ struct ContentView: View {
         
     }
     
+//    private func updateLatestHeartRate(_ statisticsCollection: HKStatisticsCollection) {
+//        let startDate = Calendar.current.date(byAdding: .day, value: -7, to: Date())!
+//        let endDate = Date()
+//    }
+    
+    
+    
     @State private var isPresent: Bool = false
     @State private var text: String = ""
+    @State private var totalWorkout: Double = 0.0
+    @State private var goal: Int = 180
+    @EnvironmentObject var settings: Goals
+    
+    
+    private func calculateTotalWorkout() -> Double {
+        totalWorkout = sumDuration.reduce(0, +)
+        print(totalWorkout)
+        return totalWorkout
+    }
     
 
     var body: some View {
@@ -103,7 +124,10 @@ struct ContentView: View {
                                     }
                                 }
                             }
+                            totalWorkout = calculateTotalWorkout()
                         }
+                    
+                    
                     
                     
                     ActiveEnergyGraphView(activeenergy: activeenergies)
@@ -125,6 +149,12 @@ struct ContentView: View {
             }
             .navigationTitle("Health Data")
             .navigationBarItems(trailing: NavigationLink(destination: ChangeGoalView(), label: {Text("Modify Goal")}))
+            
+        }
+        Section {
+            Text("Current Weekly Goal: \(goal) minutes")
+            //CurrentGoalView()
+            
         }
     }
 }

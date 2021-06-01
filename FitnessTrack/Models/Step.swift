@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct Step: Identifiable {
     let id = UUID()
@@ -16,4 +17,18 @@ struct ActiveEnergy: Identifiable {
     let id = UUID()
     let calorie: Int
     let date: Date
+}
+
+struct HearRate: Identifiable {
+    let id = UUID()
+    let latest_heartrate: Int
+    let date: Date
+}
+
+class Goals: ObservableObject{
+    @Published var goal: Double
+    
+    init(goal: Double) {
+            self.goal = goal
+    }
 }
