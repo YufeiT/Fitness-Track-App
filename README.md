@@ -12,5 +12,4 @@ Project is created with:
 
 ## Todo
 * Notification feature
-* Let user set goal 
 * Motivate user based on the difference of their goal and current information.
