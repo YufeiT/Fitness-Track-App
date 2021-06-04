@@ -6,7 +6,7 @@ struct StepGraphView: View {
     static let dateFormatter: DateFormatter = {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM"
+        formatter.dateFormat = "MM/dd"
         return formatter
         
     }()

@@ -79,14 +79,11 @@
 				5AB2180F265ED2D300B45E45 /* FitnessTrackApp.swift */,
 				5AB21811265ED2D300B45E45 /* ContentView.swift */,
 				5A7F7D882666B34100442998 /* Motivation.swift */,
-				5ABE5FF02665FF80009528F4 /* CurrentGoalView.swift */,
-				5ADD293626659E8200B27195 /* ChangeGoalView.swift */,
 				5AB2181E265ED2F300B45E45 /* HealthStore.swift */,
 				5AB21820265ED35900B45E45 /* Models */,
 				5AB21813265ED2D300B45E45 /* Assets.xcassets */,
 				5AB21818265ED2D300B45E45 /* Info.plist */,
 				5AB21815265ED2D300B45E45 /* Preview Content */,
-				5ABE5FF426660A2C009528F4 /* HeartRateView.swift */,
 			);
 			path = FitnessTrack;
 			sourceTree = "<group>";
@@ -111,6 +108,9 @@
 		5AB21823265ED36400B45E45 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5ABE5FF426660A2C009528F4 /* HeartRateView.swift */,
+				5ABE5FF02665FF80009528F4 /* CurrentGoalView.swift */,
+				5ADD293626659E8200B27195 /* ChangeGoalView.swift */,
 				5AB21824265ED36400B45E45 /* StepGraphView.swift */,
 				5AB2182A265EDD7D00B45E45 /* WorkoutGraphView.swift */,
 				5ADD292E265EF06A00B27195 /* ActiveEnergyGraphView.swift */,

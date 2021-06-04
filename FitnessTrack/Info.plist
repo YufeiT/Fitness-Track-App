@@ -36,7 +36,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
-		<string>health</string>
+		<string>health180</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
 		<false/>
 		<key>UIColorName</key>

@@ -13,9 +13,9 @@ struct ChangeGoalView: View {
     @State var notificationsEnabled: Bool = false
     @State private var previewIndex = 0
     @State private var showActionSheet = false
-    var previewOptions = ["Always", "When Unlocked"]
     @State private var showAlert = false
     @EnvironmentObject var goals: Goals
+    var previewOptions = ["Always", "When Unlocked"]
     
     
     
@@ -29,9 +29,9 @@ struct ChangeGoalView: View {
         Form {
             Section(header: Text("Weekly Exercise Goal")) {
                 TextField("Duration in minutes", text: $duration)
-                Toggle(isOn: $isPrivate) {
-                    Text("Private Account")
-                }
+//                Toggle(isOn: $isPrivate) {
+//                    Text("Private Account")
+//                }
             }
             
             
